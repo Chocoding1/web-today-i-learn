@@ -1,3 +1,28 @@
 @import "./reset.css";
 @import "./common.css";
 @import "./wiki-layout.css";
+
+/* 갤러리 그리드 설정 */
+.gallery-grid {
+  display: grid;
+  /* 1. 3열로 나누고 각 열의 너비를 동일하게(1fr) 설정 */
+  grid-template-columns: repeat(3, 1fr);
+  /* 2. 이미지 사이의 간격 */
+  gap: 12px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  /* 3. 이미지를 정사각형 비율로 고정 */
+  aspect-ratio: 1 / 1;
+  /* 4. 이미지가 찌그러지지 않고 꽉 차게 설정 */
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* 마우스를 올렸을 때 살짝 커지는 효과 (선택 사항) */
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
